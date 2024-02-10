@@ -22,7 +22,7 @@ This pattern allows for both HTTP and HTTPS protocols, domain names with various
 ## Regex Components
 
 ### Anchors
-Anchors are represented by ^ and $ and signify the start and end of the string. They ensure that the entire string matches the regex pattern.
+Anchors are represented by '^' and '$' and signify the start and end of the string. They ensure that the entire string matches the regex pattern.
 
 An example:
 /^https?:\/\/example.com$/
@@ -42,7 +42,7 @@ An example:
 /^https?:\/\/[\da-z\.-]+\.com$/
 
 ### Grouping and Capturing
-Grouping, indicated by parentheses '()', allows for creating subpatterns within the regex. This enables us to extract specific components of the URL, such as the protocol, domain, and path.
+Grouping, indicated by parentheses '()', allows for creating subpatterns within the regex. This enables us to separate specific components of the URL, such as the protocol, domain, and path.
 
 An example:
 /^((https?):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
@@ -54,6 +54,7 @@ Quantifiers are greedy by default, matching as much text as possible. Adding '?'
 An example:
 /^https?:\/\/[\da-z\.-]+?\.com$/
 In this regex, the '?' after '+' makes the pattern match the domain part ('[\da-z\.-]+') as few characters as possible.
+
 ### Boundaries
 Boundary metacharacters, such as '\b' and '\B', specify positions where matches can occur within the text.
 
@@ -67,6 +68,7 @@ Look-ahead and look-behind assertions match a pattern only if it is followed or 
 An example:
 /^https?:\/\/(?=www)\w+\.com$/
 In this regex, the '(?=www)' is a positive look-ahead that ensures the domain starts with "www."
+
 ## Author
 
 This tutorial is created by Katoria McMullen, a student at EdX and a web developer.
